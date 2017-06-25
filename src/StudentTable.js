@@ -33,7 +33,7 @@ class StudentTable extends React.Component {
     let rows = [];
     
     this.sortStudents().forEach((student) => {
-      if (student.name.indexOf(this.props.filterText) !== -1)
+      if (student.name.indexOf(this.props.filterText) !== -1 || student.firstname.indexOf(this.props.filterText) !== -1)
         rows.push(
           <StudentRow student={student} key={student.id} />
       );
