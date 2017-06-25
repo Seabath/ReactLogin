@@ -25,10 +25,20 @@ class Students extends React.Component {
       students : STUDENTS
     };
     this.handleFilter = this.handleFilter.bind(this);
+    this.saveStudent = this.saveStudent.bind(this);
   }
 
   handleFilter(input) {
     this.setState(input);
+  }
+
+  saveStudent(student) {
+    this.setState((prevState) => {
+      let students = prevState.students;
+      student.id = students.length + 1;
+      students[student.id] = student;
+      return {students};
+    });
   }
 
   render() {
@@ -42,7 +52,8 @@ class Students extends React.Component {
           students={this.state.students}
           filterText={this.state.filterText}
         />
-        <StudentForm />
+        <StudentForm 
+          onSave={this.saveStudent} />
       </div>
     );
   }

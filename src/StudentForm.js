@@ -2,6 +2,20 @@ import React from 'react';
 
 
 class StudentForm extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.handleSave = this.handleSave.bind(this);
+  }
+
+  handleSave(e) {
+    this.props.onSave(this.state.student);
+    this.setState({
+      student: Object.assign({}, RESET_VALUES)
+    });
+    e.preventDefault();
+  }
+
   render() {
     return (
       <form>
@@ -24,10 +38,11 @@ class StudentForm extends React.Component {
           <label>
            Group
             <br />
-            <input type="text" name="group" />
+            <input type="radio" name="group" value="X"/>X
+            <input type="radio" name="group" value="I"/>I
           </label>
         </p>
-        <input type="submit" value="Save" />
+        <input type="submit" value="Save" onClick={this.handleSave} />
       </form>
     );
   }
