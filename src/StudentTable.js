@@ -49,9 +49,9 @@ class StudentTable extends React.Component {
     let rows = [];
     
     this.sortStudents().forEach((student) => {
-      if (student.name.indexOf(this.props.filterText) !== -1 || student.firstname.indexOf(this.props.filterText) !== -1
-          || (student.group === "X" && this.props.xOnly)
-          || (student.group === "I" && this.props.iOnly))
+      if ((student.name.indexOf(this.props.filterText) !== -1 || student.firstname.indexOf(this.props.filterText) !== -1)
+          && (!this.props.xOnly || (student.group === "X" && this.props.xOnly))
+          && (!this.props.iOnly || (student.group === "I" && this.props.iOnly)))
         rows.push(
           <StudentRow student={student} key={student.id} onDestroy={this.handleDestroy}/>
       );

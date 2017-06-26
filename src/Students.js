@@ -58,7 +58,9 @@ class Students extends React.Component {
       <div>
         <Filters
           filterText={this.state.filterText}
-          onFilter={this.handleFilter}/>
+          onFilter={this.handleFilter}
+          xOnly={this.state.xOnly}
+          iOnly={this.state.iOnly}/>
 
         <StudentTable
           students={this.state.students}
