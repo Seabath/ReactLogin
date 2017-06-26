@@ -8,8 +8,8 @@ class Filters extends React.Component {
   }
 
   handleChange(e) {
+    const value = e.target[e.target.type === "checkbox" ? "checked" : "value"];
     const name = e.target.name;
-    const value = e.target["value"];
     this.props.onFilter({
       [name]: value
     });
@@ -20,10 +20,26 @@ class Filters extends React.Component {
       <form>
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Search... (case sensitive)"
           value={this.props.filterText}
           name="filterText"
           onChange={this.handleChange}/>
+        <label>
+          <input
+            type="checkbox"
+            checked={this.props.showXOnly}
+            name="xOnly"
+            onChange={this.handleChange} />
+          X only
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            checked={this.props.showIOnly}
+            name="iOnly"
+            onChange={this.handleChange} />
+          I only
+        </label>
       </form>
     );
   }

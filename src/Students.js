@@ -22,14 +22,26 @@ class Students extends React.Component {
     super(props);
     this.state = {
       filterText : '',
+      xOnly: false,
+      iOnly: false,
       students : STUDENTS
     };
+
     this.handleFilter = this.handleFilter.bind(this);
+    this.handleDestroy = this.handleDestroy.bind(this);
     this.saveStudent = this.saveStudent.bind(this);
   }
 
   handleFilter(input) {
     this.setState(input);
+  }
+
+  handleDestroy(id) {
+    this.setState((prev) => {
+      let students = prev.students;
+      delete students[id];
+      return {students};
+    });
   }
 
   saveStudent(student) {
@@ -51,7 +63,10 @@ class Students extends React.Component {
         <StudentTable
           students={this.state.students}
           filterText={this.state.filterText}
-        />
+          xOnly={this.state.xOnly}
+          iOnly={this.state.iOnly}
+          onDestroy={this.handleDestroy}/>
+
         <StudentForm 
           onSave={this.saveStudent} />
       </div>
