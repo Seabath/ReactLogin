@@ -17,29 +17,37 @@ class Filters extends React.Component {
 
   render() {
     return (
-      <form>
-        <input
-          type="text"
-          placeholder="Search... (case sensitive)"
-          value={this.props.filterText}
-          name="filterText"
-          onChange={this.handleChange}/>
-        <label>
-          <input
-            type="checkbox"
-            checked={this.props.showXOnly}
-            name="xOnly"
-            onChange={this.handleChange} />
-          X only
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            checked={this.props.showIOnly}
-            name="iOnly"
-            onChange={this.handleChange} />
-          I only
-        </label>
+       <form>
+        <div className="row">
+          <div className="col-sm-4">
+            <input
+              type="text"
+              placeholder="Search"
+              value={this.props.filterText}
+              name="filterText"
+              onChange={this.handleChange}/>
+          </div>
+          <div className="col-sm-4">
+            <label>
+              <input
+                type="checkbox"
+                checked={this.props.showXOnly}
+                name="xOnly"
+                onChange={this.handleChange} />
+              X only
+            </label>
+          </div>
+          <div className="col-sm-4">
+            <label>
+              <input
+                type="checkbox"
+                checked={this.props.showIOnly}
+                name="iOnly"
+                onChange={this.handleChange} />
+              I only
+            </label>
+          </div>
+        </div>
       </form>
     );
   }

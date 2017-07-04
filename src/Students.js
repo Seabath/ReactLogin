@@ -55,7 +55,11 @@ class Students extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
+        <div className="jumbotron">
+          <h1>Test ReactJS</h1>
+          <p>Ceci est un test</p>
+        </div>
         <Filters
           filterText={this.state.filterText}
           onFilter={this.handleFilter}
@@ -68,9 +72,6 @@ class Students extends React.Component {
           xOnly={this.state.xOnly}
           iOnly={this.state.iOnly}
           onDestroy={this.handleDestroy}/>
-
-        <StudentForm 
-          onSave={this.saveStudent} />
       </div>
     );
   }

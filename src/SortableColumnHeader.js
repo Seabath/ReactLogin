@@ -18,16 +18,14 @@ class SortableColumnHeader extends React.Component {
       <th>
         {this.props.column}
         <button
-          className={currentSort === 'desc' ? 'SortableColumnHeader-current' : ''}
+          className="btn-xs btn-default glyphicon glyphicon-arrow-up pull-right"
           onClick={this.handleSort}
           name="desc">
-          &#x25B2;
         </button>
         <button
-          className={currentSort === 'asc' ? 'SortableColumnHeader-current' : ''}
+          className='btn-xs btn-default glyphicon glyphicon-arrow-down pull-right'
           onClick={this.handleSort}
           name="asc" >
-          &#x25BC;
         </button>
       </th>
     );

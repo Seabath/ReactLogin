@@ -59,7 +59,7 @@ class StudentTable extends React.Component {
 
     return (
       <div>
-        <table>
+        <table className="table table-striped table-hover">
           <thead>
             <tr>
             <SortableColumnHeader
