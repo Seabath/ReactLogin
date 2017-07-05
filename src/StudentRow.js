@@ -24,7 +24,9 @@ class StudentRow extends React.Component {
           <span>{this.props.student.group}</span>
         </td>
         <td>
-          <button onClick={this.destroy} style={{color: 'red'}}>X</button>
+          <button
+            className="btn btn-sm btn-danger"
+            onClick={this.destroy}>X</button>
         </td>
       </tr>
     );
