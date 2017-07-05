@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class Header extends Component {
   render() {
+    let url = window.location.pathname;
     return (
       <div>
         <div className="App-header">
@@ -19,8 +20,8 @@ class Header extends Component {
               <a className="navbar-brand" href="/">ReactTest</a>
             </div>
             <ul className="nav navbar-nav">
-              <li className="active"><a href="/">Home</a></li>
-              <li className=""><a href="/add-student">Add Student</a></li>
+              <li className={url === "/" ? "active" : ""}><a href="/">Home</a></li>
+              <li className={url === "/add-student" ? "active" : ""}><a href="/add-student">Add Student</a></li>
             </ul>
           </div>
         </nav>

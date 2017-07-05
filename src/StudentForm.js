@@ -37,29 +37,50 @@ class StudentForm extends React.Component {
     return (
       <form>
         <h3>Enter a new Student</h3>
-        <p>
-          <label>
-            Name
-            <br />
-            <input type="text" name="name" onChange={this.handleChange} value={this.state.student.name}/>
-          </label>
-        </p>
-        <p>
-          <label>
-            Firstname
-            <br />
-            <input type="text" name="firstname" onChange={this.handleChange} value={this.state.student.firstname}/>
-          </label>
-        </p>
-        <p>
-          <label>
-           Group
-            <br />
-            <input type="radio" name="group" value="X" onChange={this.handleChange} checked={this.state.student.group === 'X'}/>X
-            <input type="radio" name="group" value="I" onChange={this.handleChange} checked={this.state.student.group === 'I'}/>I
-          </label>
-        </p>
-        <input type="submit" value="Save" onClick={this.handleSave} />
+        <div className="form-group">
+          <label for="name">Name:</label>
+          <input
+            className="form-control"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter name"
+            onChange={this.handleChange} value={this.state.student.name}/>
+        </div>
+        <div className="form-group">
+          <label for="firstname">Firstname:</label>
+          <input 
+            className="form-control"
+            type="text"
+            name="firstname"
+            id="firstname"
+            placeholder="Enter firstname"
+            onChange={this.handleChange} value={this.state.student.firstname}/>
+        </div>
+        <div className="form-group">
+          <label for="group">Group</label>
+          <div id="group">
+            <label className="radio-inline">
+              <input
+                type="radio"
+                name="group"
+                value="X"
+                onChange={this.handleChange} checked={this.state.student.group === 'X'}/>
+              X
+            </label>
+            <label className="radio-inline">
+              <input
+                type="radio"
+                name="group"
+                value="I"
+                onChange={this.handleChange} checked={this.state.student.group === 'I'}/>
+              I
+            </label>
+          </div>
+        </div>
+        <input
+          className="btn btn-default"
+          type="submit" value="Save" onClick={this.handleSave} />
       </form>
     );
   }

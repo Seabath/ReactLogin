@@ -7,10 +7,7 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <ul>
-          <li>Home</li>
-          <li>Add Student</li>
-        </ul>
+        <Home/>
       </div>
     );
   }
@@ -34,7 +31,9 @@ export class AddStudent extends Component {
     return (
       <div>
         <Header />
-        <StudentForm />
+        <div className="container" >
+          <StudentForm />
+        </div>
       </div>
     );
   }
