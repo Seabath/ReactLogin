@@ -17,7 +17,7 @@ class Filters extends React.Component {
 
   render() {
     return (
-       <form className="form-inline">
+      <form className="form-inline">
         <div className="form-group">
           <input
             className="form-control"
@@ -27,26 +27,22 @@ class Filters extends React.Component {
             name="filterText"
             onChange={this.handleChange}/>
         </div>
-        <div className="checkbox">
-          <label>
-            <input
-              type="checkbox"
-              checked={this.props.showXOnly}
-              name="xOnly"
-              onChange={this.handleChange} />
-            X only
-          </label>
-        </div>
-        <div className="checkbox">
-          <label>
-            <input
-              type="checkbox"
-              checked={this.props.showIOnly}
-              name="iOnly"
-              onChange={this.handleChange} />
-            I only
-          </label>
-        </div>
+        <label className="checkbox-inline">
+          <input
+            type="checkbox"
+            checked={this.props.showXOnly}
+            name="xOnly"
+            onChange={this.handleChange} />
+          X only
+        </label>
+        <label className="checkbox-inline">
+          <input
+            type="checkbox"
+            checked={this.props.showIOnly}
+            name="iOnly"
+            onChange={this.handleChange} />
+          I only
+        </label>
       </form>
     );
   }

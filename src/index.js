@@ -5,7 +5,7 @@ import {App, Home, AddStudent} from './main.js';
 
 ReactDOM.render((
     <Router history = {browserHistory}>
-      <Route path="/" component={App}/>
+      <Route path="/" component={Home}/>
       <Route path="/add-student" component={AddStudent} />
     </Router>
 
